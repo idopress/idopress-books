@@ -2,15 +2,45 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>어서오세요 - 이도프레스</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이도프레스 전자책</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>어서오세요 - 이도프레스</h1>
-    <ul>
-        <li><a href="books/jusaengjeon.html">주생전 보기</a></li>
-        <li><a href="books/rabbit.html">지혜로운 토끼</a></li>
-        <li><a href="books/cheonjiin.html">천지인</a></li>
-    </ul>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow-md sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">📚 이도프레스</h1>
+      <div class="flex items-center space-x-4">
+        <input type="text" placeholder="도서 검색" class="border rounded px-2 py-1 w-40" />
+        <select class="border rounded px-2 py-1">
+          <option>한국어</option>
+          <option>English</option>
+          <option>日本語</option>
+          <option>Español</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-4">📖 도서 목록</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded shadow p-4">
+        <img src="assets/book-cover.png" alt="책 표지" class="w-full h-48 object-cover rounded" />
+        <h3 class="text-lg font-semibold mt-3">주생전</h3>
+        <p class="text-sm text-gray-600">한문 고전 소설</p>
+        <a href="books/jusaengjeon.html" class="mt-2 inline-block text-blue-600 hover:underline">자세히 보기 →</a>
+      </div>
+      <div class="bg-white rounded shadow p-4">
+        <img src="assets/book-cover.png" alt="책 표지" class="w-full h-48 object-cover rounded" />
+        <h3 class="text-lg font-semibold mt-3">지혜로운 토끼</h3>
+        <p class="text-sm text-gray-600">창작 동화</p>
+        <a href="books/rabbit.html" class="mt-2 inline-block text-blue-600 hover:underline">자세히 보기 →</a>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-white text-center py-4 border-t mt-10 text-sm text-gray-500">
+    © 2025 idopress. All rights reserved.
+  </footer>
 </body>
 </html>
