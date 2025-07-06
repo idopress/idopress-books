@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>주생전 Part 1 - 다국어 전자책</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <div class="max-w-3xl mx-auto p-6">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold">📘 주생전 Part 1</h1>
+      <select id="language" class="border rounded p-2">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="jp">日本語</option>
+      </select>
+    </div>
+    <div id="book-content" class="prose prose-sm sm:prose lg:prose-lg max-w-none"></div>
+  </div>
+  <script>
+    const content = {
+      ko: `<h2>1부</h2><p>주생은 어려서부터 글재주가 뛰어났지만, 과거에 실패하고 장삿길에 나섰다...</p>`,
+      en: `<h2>Part 1</h2><p>Jusaeng was gifted in writing from an early age but failed the state exam and turned to trade...</p>`,
+      es: `<h2>Parte 1</h2><p>Jusaeng tenía talento para la escritura desde joven, pero fracasó en los exámenes estatales y se dedicó al comercio...</p>`,
+      jp: `<h2>第1部</h2><p>ジュセンは幼い頃から文才があったが、科挙に落ちて商売の道に入った...</p>`
+    };
+
+    const selector = document.getElementById('language');
+    const bookDiv = document.getElementById('book-content');
+
+    function updateContent() {
+      const lang = selector.value;
+      bookDiv.innerHTML = content[lang];
+    }
+
+    selector.addEventListener('change', updateContent);
+    updateContent(); // default
+  </script>
+</body>
+</html>
